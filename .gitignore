@@ -1,0 +1,10 @@
+screenshot/
+build/
+.idea
+.DS_Store
+*.iml
+logs/
+log/
+target/
+crawler_output/
+dependency-reduced-pom.xml
