@@ -8,15 +8,21 @@ update 2023.11.23,email:565914036@qq.com
 
 ### 1.遍历点击图片：
 
-![2023-11-23_09-52-58_X-374-Y-210-click](.\jar\7.0\crawler_output\e84cdc46-2023-11-23-09_52_34\screenshot\2023-11-23_09-52-58_X-374-Y-210-click.png)
+![image](https://github.com/ShirleyDora/ShirleyCrawler/blob/main/doc/pic/2023-11-23_09-52-58_X-374-Y-210-click.png)
+
+![2023-11-23_09-52-58_X-374-Y-210-click](.\doc\pic\2023-11-23_09-52-58_X-374-Y-210-click.png)
 
 ### 2.crash崩溃视频：
 
-<video src=".\jar\7.0\crawler_output\e84cdc46-2023-11-23-10_24_11\testing_steps.mp4"></video>
+<video src="https://github.com/ShirleyDora/ShirleyCrawler/blob/main/doc/pic/testing_steps.mp4"></video>
 
-## 2.测试报告:
+<video src="./doc/pic/testing_steps.mp4"></video>
 
- ![2023-11-23_111654](.\jar\7.0\crawler_output\e84cdc46-2023-11-23-09_52_34\2023-11-23_111654.png)
+2.测试报告:
+
+![image](https://github.com/ShirleyDora/ShirleyCrawler/blob/main/doc/pic/2023-11-23_111654.png)
+
+![2023-11-23_111654](./doc/pic/2023-11-23_111654.png)
 
 ## 3. 功能描述 :
 
