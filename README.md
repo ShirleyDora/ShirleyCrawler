@@ -1,26 +1,24 @@
 # UICrawler
-## 基于Appium的App UI遍历 & Monkey 工具
 
+基于Appium的App UI遍历 & Monkey 工具2023.08.21 by Shirley 
 
-* 针对个人和公司提供有偿UI自动化技术、接口自动化技术、接口mock技术等培训及测试工具定制开发
-  * QQ 技术交流群 ： 728183683
-  
-* 环境搭建及基本使用说明
-  * 环境搭建(感谢网友harsayer倾力之作)： https://testerhome.com/topics/14490  
-  * JDK 1.8: https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
-  * Appium v1.20.2: http://appium.io/
-  * Java-client 7.5.1 : https://search.maven.org/search?q=g:io.appium%20AND%20a:java-client
-  
-![](https://github.com/lgxqf/UICrawler/blob/master/doc/pic/picToMov.gif)
+update 2023.11.23,email:565914036@qq.com
 
-## 关于如何发挥测试工具的价值
-* 用不同的账号登录app运行测试，因为每个账号可能看到的内容不一样
-* 用不同的手机系统版本运行测试，尽可能做到iOS 9-11, Android 4-8 都覆盖到，如果资源有限无法同时运行多台设备，每天可以选择一两个系统版的手机去运行测试
-* 用不同的手机运行测试，尤其安卓碎片化严重，手机厂商多，有的问题只有特定手机才能发现
-* 关于测试运行的频度，只要有代码改动建议至少一天一次，下班时运行，第二天看结果 
+## 1.测试效果：
 
+### 1.遍历点击图片：
 
-## 2.0 版 功能描述 
+![2023-11-23_09-52-58_X-374-Y-210-click](.\jar\7.0\crawler_output\e84cdc46-2023-11-23-09_52_34\screenshot\2023-11-23_09-52-58_X-374-Y-210-click.png)
+
+### 2.crash崩溃视频：
+
+<video src=".\jar\7.0\crawler_output\e84cdc46-2023-11-23-10_24_11\testing_steps.mp4"></video>
+
+## 2.测试报告:
+
+ ![2023-11-23_111654](.\jar\7.0\crawler_output\e84cdc46-2023-11-23-09_52_34\2023-11-23_111654.png)
+
+## 3. 功能描述 :
 
 ### 1.UI遍历及以下功能 Android/iOS 
 * 基于深度优先的原则，点击UI上的元素。当发现Crash时会提供操作步骤截图及相应的Log.
@@ -78,13 +76,13 @@
 
 
 
-## 运行工具
+## 4.运行工具
 
 ### 1.下载Jar包
-[UICrawler.jar](https://pan.baidu.com/s/1mNci6SWNHPuLj_mvrfgIbg)
+./jar/7.0/[UICrawler.jar]
 
 ### 2.下载配置文件
-[config.yml](https://github.com/lgxqf/UICrawler/blob/master/config.yml) 
+./jar/7.0/[config.yml]
 
 ### 3.根据待测试App修改配置文件中下列各项的值 [详情见 Config.md](doc/Config.md)
   #### Android
@@ -94,8 +92,6 @@
   * IOS_BUNDLE_ID
   * IOS_BUNDLE_NAME
   * IOS_IPA_NAME
-  #### Monkey配置项可选， 详情见 [Monkey配置](https://github.com/lgxqf/UICrawler/blob/master/doc/Config.md#monkey%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE)  
-
 ### 4.启动appium
 ```bash
 appium --session-override
@@ -124,7 +120,7 @@ java -jar UICrawler.jar -u udid -w
 ```
 
 
-### 查看支持的参数
+### 6.查看支持的参数
 ```aidl
 java -jar UICrawler.jar -h
 
@@ -144,7 +140,7 @@ java -jar UICrawler.jar -h
     -w  Run in wechat mode
 ```
 
-### 一些常用命令
+### 7.一些常用命令
 ```
 查看设备udid
 Android:
@@ -167,28 +163,59 @@ Android查看当前activity
     adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
 ```
 
-## 测试报告 
-![](https://github.com/lgxqf/UICrawler/blob/master/doc/pic/Test-Report.png)
+## 5.打包
+
+mvn clean package
+
+## 6.电脑环境配置:
+
+1.适配：jdk22.0.*,appium2.0.*.
+	5.0适配appium1.17.1;6.0适配appium2.0.*;7.0适配appium2.0.*+不限制输入法
+	安装appium:npm install appium@next;appium driver install uiautomator2
+
+2.环境搭建及基本使用说明
+
+环境搭建： https://testerhome.com/topics/14490  
+
+JDK 1.8: https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+
+Appium v1.20.2: http://appium.io/
+
+Java-client 7.5.1 : https://search.maven.org/search?q=g:io.appium%20AND%20a:java-client
+
+3.依赖的工具
+
+Grafana http://docs.grafana.org/installation/mac/
+
+InfluxDB https://portal.influxdata.com/downloads
 
 
-## 注意事项
+## 7.注意事项
 * iOS设备一定要打开"开发者选项"里的“Enable UI Automation” https://www.jianshu.com/p/a1d075b3472c
 * iOS测试包必须是debug版的
 * 同时运行多台ios设备时要每台设备要设置不同的IOS_WDA_PORT ： 8001-8888
-* Android7及以上的手机必须安装Uiautomator2 server 的两个apk(安装deskstop版appium,初次连接appium会自动安装), 也可进入到[apk](https://github.com/lgxqf/UICrawler/tree/master/apk)目录下通过adb安装
+* Android7及以上的手机必须安装Uiautomator2 server 的两个apk(安装deskstop版appium,初次连接appium会自动安装), 也可进入到[apk]目录下通过adb安装
+* 关于如何发挥测试工具的价值：
+  * 用不同的账号登录app运行测试，因为每个账号可能看到的内容不一样
+  * 用不同的手机系统版本运行测试，尽可能做到iOS 9-11, Android 4-8 都覆盖到，如果资源有限无法同时运行多台设备，每天可以选择一两个系统版的手机去运行测试
+  * 用不同的手机、车机版本运行测试，尤其安卓碎片化严重，手机、车机厂商多，有的问题只有特定手机、车机才能发现
+  * 关于测试运行的频度，只要有代码改动建议至少一天一次，下班时运行，第二天看结果 
 
 
-## 依赖的工具
-* Grafana http://docs.grafana.org/installation/mac/
-* InfluxDB https://portal.influxdata.com/downloads
-
-
-## Known issue
+## 8.不支持内容：
 * iOS不支持WKWebview元素获取 https://github.com/appium/appium/issues/9408
+
 * Android中bounds=[device width, device height]时xpath不能定位到元素.（appium bug)
 
+* Android SDK build-tools  30.0.0 需要配合Java 12才能使用否则会报错 "appium-uiautomator2-server-v4.20.0.apk'. Original error: Error: A JNI error has occurred"
+  详情参考
 
-## 参考内容
+  https://ceshiren.com/t/topic/2329
+
+  https://blog.csdn.net/weixin_46055113/article/details/111193255
+
+
+## 9.参考内容
 * Yaml 文件格式 https://blog.csdn.net/michaelhan3/article/details/69664932 
 * Android API level 与version对应关系 http://www.cnblogs.com/jinglecode/p/7753107.html  
     CMD: adb -s uuid shell getprop | grep version.sdk
@@ -204,8 +231,6 @@ Android查看当前activity
 * Appium并发测试 https://www.cnblogs.com/testway/p/6140594.html
 * Android 性能采集 https://blog.csdn.net/bigconvience/article/details/35553983
 
-
-## 一些技术文档
 * Appium Java-Client API http://appium.github.io/java-client/
 * iOS多机远程控制技术 https://mp.weixin.qq.com/s/rN2xcO9gNIAoeY71NX_HZw
 * http://appium.io/docs/en/commands/mobile-command/
@@ -213,10 +238,4 @@ Android查看当前activity
 * SpringAOP https://blog.csdn.net/zknxx/article/details/53240959
 * Appium inspector 用法 https://blog.csdn.net/weixin_45314192/article/details/120743367
 
-## Known issue
-* Android SDK build-tools  30.0.0 需要配合Java 12才能使用否则会报错 "appium-uiautomator2-server-v4.20.0.apk'. Original error: Error: A JNI error has occurred"
-详情参考
-  * https://ceshiren.com/t/topic/2329
-  * https://blog.csdn.net/weixin_46055113/article/details/111193255
 
-## [CHANGE HISTORY](https://github.com/lgxqf/UICrawler/blob/master/doc/ChangeHistory.md)

@@ -587,7 +587,8 @@ public final class Driver {
         //capabilities.setCapability("autoWebview", true);
         //capabilities.setCapability("xcodeOrgId", "7Q6C9D7LVN");//capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 
-        String url = "http://" + ConfigUtil.getServerIp() + ":" + appiumPort + "/wd/hub";
+        // String url = "http://" + ConfigUtil.getServerIp() + ":" + appiumPort + "/wd/hub";
+        String url = "http://" + ConfigUtil.getServerIp() + ":" + appiumPort;
         log.info(url);
         driver = new IOSDriver<>(new URL(url), capabilities);
 
@@ -595,7 +596,7 @@ public final class Driver {
 
         return driver;
     }
-
+    // appium的配置
     public static AppiumDriver<WebElement> prepareForAppiumAndroid(String appPackage, String appActivity, String udid, String port) throws Exception {
         log.info(MyLogger.getMethodName());
 
@@ -616,10 +617,11 @@ public final class Driver {
 
         capabilities.setCapability("appActivity", appActivity);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true); //Don't delete app data
-        capabilities.setCapability("unicodeKeyboard", true); //支持中文输入
-        capabilities.setCapability("resetKeyboard", true); //重置输入法为系统默认
+        capabilities.setCapability("unicodeKeyboard", false); //支持中文输入
+        capabilities.setCapability("resetKeyboard", false); //重置输入法为系统默认
 
-        String url = "http://" + ConfigUtil.getServerIp() + ":" + port + "/wd/hub";
+        // String url = "http://" + ConfigUtil.getServerIp() + ":" + port + "/wd/hub";
+        String url = "http://" + ConfigUtil.getServerIp() + ":" + port;
         log.info(url);
         driver = new AndroidDriver<>(new URL(url), capabilities);
 
@@ -685,12 +687,10 @@ public final class Driver {
         log.info(MyLogger.getMethodName());
         TouchAction dragAction = new TouchAction(driver);
         List<PointOption> pointOptionList = new ArrayList<>();
-
         if (pointsList.size() % 2 != 0) {
             log.error("drag value is not configured correctly: " + pointOptionList);
             return;
         }
-
         try {
             for (int i = 0; i < pointsList.size(); i = i + 2) {
                 int x = Integer.parseInt(pointsList.get(i));
@@ -710,16 +710,13 @@ public final class Driver {
             log.error("Fail to perform drag operation");
         }
     }
-
     public static void pressBack() {
         log.info("Method : pressBack");
-
         if (Util.isAndroid()) {
             pressKeyCode(AndroidKey.BACK);
         } else {
             swipeHorizontally(true);
         }
-
         Driver.sleep(0.5);
     }
 

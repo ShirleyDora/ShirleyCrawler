@@ -3,9 +3,7 @@ package util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Created by Ma Yi on 2017/4/26.
- */
+
 public class MyLogger {
     public static Logger log = LoggerFactory.getLogger(MyLogger.class);
 

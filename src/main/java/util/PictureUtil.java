@@ -316,11 +316,11 @@ public class PictureUtil {
 
         graphics2d = (img = new BufferedImage(h, w, type))
                 .createGraphics();
-
+        
         graphics2d.setRenderingHint(
                 RenderingHints.KEY_INTERPOLATION,
                 RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-
+                
         if (h > w) {
             h = w;
         }

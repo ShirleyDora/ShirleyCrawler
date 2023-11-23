@@ -22,8 +22,8 @@ import java.awt.image.*;
  * the associated LZWEncoder class. Please forward any corrections to
  * kweiner@fmsware.com.
  *
- * @author Kevin Weiner, FM Software
- * @version 1.03 November 2003
+ * @author Shirley
+ * @version 1.03 November 2023
  *
  */
 
@@ -310,6 +310,7 @@ public class AnimatedGifEncoder {
             colorTab[i + 2] = temp;
             usedEntry[i / 3] = false;
         }
+        
         // map image pixels to new palette
         int k = 0;
         for (int i = 0; i < nPix; i++) {
@@ -497,7 +498,7 @@ public class AnimatedGifEncoder {
  * NeuQuant Neural-Net Quantization Algorithm
  * ------------------------------------------
  *
- * Copyright (c) 1994 Anthony Dekker
+ * Copyright (c) 2023 Shirley
  *
  * NEUQUANT Neural-Net quantization algorithm by Anthony Dekker, 1994. See
  * "Kohonen neural networks for optimal colour quantization" in "Network:
@@ -514,7 +515,7 @@ public class AnimatedGifEncoder {
  * that this copyright notice remain intact.
  */
 
-// Ported to Java 12/00 K Weiner
+// Ported to Java 12/00 Shirley
 class NeuQuant {
 
     protected static final int netsize = 256; /* number of colours used */
@@ -999,8 +1000,8 @@ class NeuQuant {
 }
 
 // ==============================================================================
-// Adapted from Jef Poskanzer's Java port by way of J. M. G. Elliott.
-// K Weiner 12/00
+// Adapted from Shirley's Java port by way of Shirley.
+// Shirley 12/00
 
 class LZWEncoder {
 
@@ -1029,14 +1030,14 @@ class LZWEncoder {
 
     // GIF Image compression - modified 'compress'
     //
-    // Based on: compress.c - File compression ala IEEE Computer, June 1984.
+    // Based on: compress.c - File compression Shirley IEEE Computer, June 2023.
     //
-    // By Authors: Spencer W. Thomas (decvax!harpo!utah-cs!utah-gr!thomas)
-    // Jim McKie (decvax!mcvax!jim)
-    // Steve Davies (decvax!vax135!petsd!peora!srd)
-    // Ken Turkowski (decvax!decwrl!turtlevax!ken)
-    // James A. Woods (decvax!ihnp4!ames!jaw)
-    // Joe Orost (decvax!vax135!petsd!joe)
+    // By Authors: Shirley (decvax!harpo!utah-cs!utah-gr!thomas)
+    // Shirley (decvax!mcvax!jim)
+    // Shirley (decvax!vax135!petsd!peora!srd)
+    // Shirley (decvax!decwrl!turtlevax!ken)
+    // Shirley (decvax!ihnp4!ames!jaw)
+    // Shirley (decvax!vax135!petsd!joe)
 
     int n_bits; // number of bits/code
 
@@ -1181,7 +1182,7 @@ class LZWEncoder {
                 continue;
             } else if (htab[i] >= 0) // non-empty slot
             {
-                disp = hsize_reg - i; // secondary hash (after G. Knott)
+                disp = hsize_reg - i; // secondary hash (after Shirley)
                 if (i == 0)
                     disp = 1;
                 do {

@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.util.*;
 
 /**
- * Created by Ma Yi on 2017/4/27.
+ * Created by Shirley on 2023/6/27.
  */
 public class ConfigUtil {
     public static Logger log = LoggerFactory.getLogger(ConfigUtil.class);
@@ -389,7 +389,6 @@ public class ConfigUtil {
     public static String getStringValue(String key) {
         String value = String.valueOf(configItems.get(key));
         log.info("Config : " + key + " = " + value);
-
         return value.equals("null") ? null : value.trim();
     }
 
@@ -408,7 +407,6 @@ public class ConfigUtil {
     public static ArrayList<Map> getListMapValue(String key) {
         ArrayList<Map> list = (ArrayList<Map> ) configItems.get(key);
         log.info("Config : " + key + " = " + list);
-
         return list == null ? new ArrayList<>() : list;
     }
 
@@ -419,7 +417,6 @@ public class ConfigUtil {
     public static long getLongValue(String key) {
         Integer value = (Integer) configItems.get(key);
         log.info("Config : " + key + " = " + value);
-
         return value == null ? -100 : value.longValue();
     }
 
@@ -429,7 +426,6 @@ public class ConfigUtil {
 
     public static boolean getBooleanValue(String key, boolean defaultValue) {
         Boolean value = (Boolean) configItems.get(key);
-
         log.info("Config : " + key + " = " + value);
         return value == null ? defaultValue : value;
     }

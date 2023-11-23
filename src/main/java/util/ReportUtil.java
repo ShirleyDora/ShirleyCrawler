@@ -42,11 +42,13 @@ public class ReportUtil {
 
         builder.append("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n" + "<html>\n" + "<head>\n");
         builder.append("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + meta + "\" />\n");
-        builder.append("    <title>UICrawler Report</title>\n");
+        builder.append("    <title>UICrawler Report Author:Shirley</title>\n");
         addCSS();
         builder.append("</head>\n" + "<body>\n" + "<br/>\n");
-        builder.append("<h1 align=\"center\">执行结果信息汇总 Testing result summary</h1>\n");
-
+        builder.append("<h1 align=\"center\">岚图UI遍历测试报告 Voyah UI Report</h1>\n");
+        builder.append("<h2 align=\"center\">执行结果信息汇总 Testing result summary</h2>\n");
+        builder.append("<h3 align=\"center\">作者：杜雪玲 Author:Shirley</h3>\n");
+        builder.append("<h3 align=\"center\">版本V2.4.0,如果使用有疑问，请联系邮箱：h-duxl@voyah.com.cn</h3>\n");
         addSummaryTable();
         addDetailedTable();
 
